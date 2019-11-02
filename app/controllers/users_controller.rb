@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_action :check_login
+  before_action :check_login, except: [:logout]
+  before_action :authorize_user, only: [:logout]
 
   def index
   end
@@ -19,14 +20,17 @@ class UsersController < ApplicationController
   end
 
   def login
-    user = User.where(email: user_param[:email])[0]
+    @user = User.where(email: user_param[:email])[0]
     if @user
-      authenticate(user)
+      authenticate(@user)
       redirect_to clock_index_path
     else
       flash[:error] = "invalid email, please sign up!"
       render :index
     end
+  end
+
+  def logout
   end
 
   private
