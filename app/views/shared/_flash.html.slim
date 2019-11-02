@@ -1,0 +1,5 @@
+- if !flash.empty?
+  - flash.each do |key, message|
+    div class=("flash #{key}") 
+      span = flash[key] = message.try(:html_safe)
+  - flash.clear
