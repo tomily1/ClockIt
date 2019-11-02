@@ -8,7 +8,6 @@ matrix:
   fast_finish: true
 script:
   - bundle exec rspec
-  - (! (git status --porcelain | grep . ) )
 addons:
   postgresql: '9.5'
 services:
