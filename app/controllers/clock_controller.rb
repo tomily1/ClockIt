@@ -59,7 +59,7 @@ class ClockController < ApplicationController
 
   def clocked_time
     DateTime.parse(clock_params[:clocked_at])
-  rescue
+  rescue StandardError
     Time.now
   end
 
