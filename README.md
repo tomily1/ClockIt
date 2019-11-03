@@ -76,4 +76,4 @@ If given a month to work on this:
 
 ### Author
 
-[Tomilayo Israel] (https://github.com/tomily1)
+[Tomilayo Israel](https://github.com/tomily1)
