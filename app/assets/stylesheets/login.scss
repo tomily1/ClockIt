@@ -1,7 +1,4 @@
-$light-blue: #34b9c6;
-$dark-blue: #078790;
-$lemon-green: #79be43;
-$red: #C52F24;
+@import './colors.scss';
 
 .logo-wrapper {
   width: 25%;
@@ -38,7 +35,7 @@ $red: #C52F24;
     font-weight: 600;
     color: #fff;
     background-color: $lemon-green;
-    }
+  }
 }
 
 .hi-mama-light-blue {
@@ -63,9 +60,9 @@ body {
     font-style: oblique;
     color: red;
   }
-}
 
-
-.was-validated, .form-control:valid, .form-control.is-valid {
-  border-color: #078790;
+  &.success {
+    font-style: oblique;
+    color: $lemon-green;
+  }
 }
