@@ -11,6 +11,8 @@ gem 'ajax-datatables-rails'
 
 gem 'bootstrap', '~> 4.3.1'
 
+gem 'chromedriver-helper'
+
 gem 'font-awesome-sass', '~> 5.11.2'
 
 gem 'jquery-rails'
