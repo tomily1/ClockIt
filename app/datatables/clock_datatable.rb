@@ -22,7 +22,7 @@ class ClockDatatable < AjaxDatatablesRails::Base
       {
         id: '*',
         type: record.type.split('::').join(' '),
-        clocked_at: record.clocked_at.strftime('%m/%d/%Y at %I:%M%p'),
+        clocked_at: (record.clocked_at + Time.zone_offset('WAT')).strftime('%m/%d/%Y at %I:%M%p'),
         details: record.details,
         edit_record: edit_record_path(record),
         delete_record: delete_record_path(record)

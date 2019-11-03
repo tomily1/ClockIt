@@ -13,6 +13,7 @@ $(document).ready(function() {
   
     var time = hour + ":" + minute + ":" +second;
     $('#digital-clock').html(time);
+    $('#clock_clocked_at').val(new Date())
 
     setTimeout(startTime, 1000)
   }
