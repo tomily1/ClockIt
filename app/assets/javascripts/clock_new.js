@@ -3,7 +3,7 @@ $(document).ready(function() {
   
   function startTime() {
     $('#time-zone').html(/\((.*)\)/.exec(new Date().toString())[1]);
-    let today = new Date();
+    var today = new Date();
     var hour = today.getHours();
     var minute = today.getMinutes();
     var second = today.getSeconds();
@@ -11,7 +11,7 @@ $(document).ready(function() {
     minute = checkTime(minute);
     second = checkTime(second)
   
-    let time = `${hour}:${minute}:${second}`;
+    var time = `${hour}:${minute}:${second}`;
     $('#digital-clock').html(time);
 
     setTimeout(startTime, 1000)
