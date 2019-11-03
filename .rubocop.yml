@@ -1,0 +1,33 @@
+AllCops:
+  Exclude:
+    - 'db/schema.rb'
+    - 'db/seeds.rb'
+    - 'vendor/**/*'
+    - 'bin/*'
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*.rb'
+    - 'config/**/*.rb'
+    - 'db/migrate/*.rb'
+    - 'lib/tasks/*.rake'
+    - 'db/schema.rb'
+Metrics/MethodLength:
+  Severity: refactor
+  Max: 20
+  Exclude:
+    - 'db/schema.rb'
+    - 'db/migrate/*.rb'
+    - 'spec/**/*.rb'
+Metrics/LineLength:
+  Max: 100
+  Exclude:
+    - 'db/schema.rb'
+    - 'spec/**/*.rb'
+    - 'config/**/*.rb'
+# Don't require a documentation comment in top-level classes
+Documentation:
+  Enabled: false
+# datatables requires a method named get_raw_records
+Naming/AccessorMethodName:
+  Exclude:
+    - 'app/datatables/clock_datatable.rb'

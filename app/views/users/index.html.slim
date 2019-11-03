@@ -1,0 +1,14 @@
+.row
+  .col-md-4
+  .col-md-4.login-form
+    = simple_form_for :user, url: login_user_path, method: :post do |f|
+      .form-group
+        small
+          span.error-message
+            = render 'shared/flash'
+        = f.input :email, placeholder: "Your Email *", class: "form-control", label: false, type: "email"
+      .form-group.text-center
+        = f.button :submit, class: "btnSubmit", value: "Login"
+    small
+      .text-right(style="bottom: 0;")
+        = link_to("Register new account", register_path, class: "hi-mama-dark-blue")

@@ -1,0 +1,20 @@
+language: ruby
+bundler_args: '--without development exclude_travis'
+cache: bundler
+dist: trusty
+rvm:
+  - 2.3.4
+matrix:
+  fast_finish: true
+script:
+  - bundle exec rspec
+addons:
+  postgresql: '9.5'
+services:
+  - postgresql
+before_script:
+  # - cp -v config/database.yml.example config/database.yml
+  # - cp -v config/settings.yml.example config/settings.yml
+  - bundle exec rake db:create
+  - bundle exec rake db:migrate
+sudo: false

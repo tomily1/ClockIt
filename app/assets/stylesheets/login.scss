@@ -1,0 +1,71 @@
+$light-blue: #34b9c6;
+$dark-blue: #078790;
+$lemon-green: #79be43;
+$red: #C52F24;
+
+.logo-wrapper {
+  width: 25%;
+}
+
+::placeholder {
+  color: $light-blue;
+}
+
+.nav-end {
+  padding-top: 2%;
+}
+
+.navbar-brand {
+  width: 100%;
+}
+
+.login-form{
+  padding: 5%;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+
+  h3 {
+    text-align: center;
+    margin-bottom: 10%;
+    color: $dark-blue;
+  }
+
+  .btnSubmit {
+    width: 50%;
+    border-radius: 1rem;
+    padding: 1.5%;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    color: #fff;
+    background-color: $lemon-green;
+    }
+}
+
+.hi-mama-light-blue {
+  color: $light-blue;
+}
+
+.padded {
+  padding-top: 3%;
+}
+
+.hi-mama-dark-blue {
+  color: $dark-blue;
+}
+
+body {
+  font-family: "Open Sans","sans-serif";
+}
+
+
+.flash {
+  &.error {
+    font-style: oblique;
+    color: red;
+  }
+}
+
+
+.was-validated, .form-control:valid, .form-control.is-valid {
+  border-color: #078790;
+}

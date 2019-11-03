@@ -1,0 +1,18 @@
+.row
+  .col-md-4
+  .col-md-4.login-form
+    h3 Create Account
+    = simple_form_for @user, url: user_path, method: :post do |f|
+      .form-group
+        small
+          span.error-message
+            = render 'shared/flash'
+        = f.label :name, 'Full Name:'
+        = f.input :name, placeholder: "Full Name *", class: "form-control", label: false, required: true
+        = f.label :email, 'Input your email:'
+        = f.input :email, placeholder: "Your Email *", class: "form-control", label: false, required: true, type: 'email'
+      .form-group.text-center
+        = f.submit "Register", class: "btnSubmit"
+    small
+      .text-right(style="bottom: 0;")
+        = link_to("Already have an account? Click Here", root_path, class: "hi-mama-dark-blue")
