@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
- 
+
 RSpec.describe 'Log in', type: :feature do
   let(:existing_user) { create(:user) }
   let(:new_user) { build(:user) }
@@ -18,8 +20,8 @@ RSpec.describe 'Log in', type: :feature do
       visit root_path
       fill_in 'user_email', with: new_user.email
       click_button 'Login'
-      expect(page.body).to have_text "invalid email, please sign up!"
-      expect(current_path).to eq "/user/login"
+      expect(page.body).to have_text 'invalid email, please sign up!'
+      expect(current_path).to eq '/user/login'
     end
   end
 end

@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe User do
-
   context 'new user' do
     it 'should be initialized' do
       expect(described_class.new).to be_truthy
@@ -16,17 +17,17 @@ RSpec.describe User do
 
     it 'should be created if valid' do
       expect do
-        described_class.create(name: "Test User", email: 'test@test.co')
+        described_class.create(name: 'Test User', email: 'test@test.co')
       end.to change { User.count }.by(1)
     end
 
     it 'should not be created with invalid email' do
-      user = User.new(name: "Test User", email: 'test')
+      user = User.new(name: 'Test User', email: 'test')
       expect(user.save).to eq false
     end
 
     it 'should not created with invalid name' do
-      user = User.new(name: "", email: 'test1@abc.co')
+      user = User.new(name: '', email: 'test1@abc.co')
       expect(user.save).to eq false
     end
   end

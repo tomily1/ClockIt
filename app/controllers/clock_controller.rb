@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ClockController < ApplicationController
   before_action :authorize_user
 

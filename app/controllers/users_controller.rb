@@ -1,9 +1,10 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
   before_action :check_login, except: [:logout]
   before_action :authorize_user, only: [:logout]
 
-  def index
-  end
+  def index; end
 
   def new
     @user = User.new
@@ -25,13 +26,12 @@ class UsersController < ApplicationController
       authenticate(@user)
       redirect_to clock_index_path
     else
-      flash[:error] = "invalid email, please sign up!"
+      flash[:error] = 'invalid email, please sign up!'
       render :index
     end
   end
 
-  def logout
-  end
+  def logout; end
 
   private
 

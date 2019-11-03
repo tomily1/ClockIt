@@ -1,15 +1,16 @@
-class ClockDatatable < AjaxDatatablesRails::Base
+# frozen_string_literal: true
 
+class ClockDatatable < AjaxDatatablesRails::Base
   def view_columns
     @view_columns ||= {
-      id: { source: "Clock.id", cond: :eq },
-      type: { source: "Clock.type", cond: :like },
-      clocked_at: { source: "Clock.clocked_at", cond: :like },
-      details: { source: "Clock.details", cond: :like }
+      id: { source: 'Clock.id', cond: :eq },
+      type: { source: 'Clock.type', cond: :like },
+      clocked_at: { source: 'Clock.clocked_at', cond: :like },
+      details: { source: 'Clock.details', cond: :like }
     }
   end
 
-  def edit_record_path(clock)
+  def edit_record_path(_clock)
     Rails.application.routes.url_helpers
   end
 
@@ -22,7 +23,7 @@ class ClockDatatable < AjaxDatatablesRails::Base
       {
         id: record.id,
         type: record.type.split('::').join(' '),
-        clocked_at: record.clocked_at.strftime("%m/%d/%Y at %I:%M%p"),
+        clocked_at: record.clocked_at.strftime('%m/%d/%Y at %I:%M%p'),
         details: record.details,
         delete_record: delete_record_path(record)
       }

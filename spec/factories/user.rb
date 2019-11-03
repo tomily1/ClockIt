@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :user do
-    email { "nipi#{rand}@test.co" } 
-    name "nipi tiri"
+    email { "nipi#{rand}@test.co" }
+    name  { 'nipi tiri' }
   end
 end

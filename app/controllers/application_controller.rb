@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
@@ -6,11 +8,11 @@ class ApplicationController < ActionController::Base
   end
 
   def authorize_user
-    redirect_to root_path if current_user == nil
+    redirect_to root_path if current_user.nil?
   end
 
   def check_login
-    redirect_to clock_index_path if current_user != nil
+    redirect_to clock_index_path unless current_user.nil?
   end
 
   def current_user
