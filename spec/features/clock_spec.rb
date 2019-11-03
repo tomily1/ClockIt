@@ -23,7 +23,9 @@ RSpec.describe 'Clock', type: :feature do
           expect(current_path).to eq new_clock_path
           fill_in 'clock_details', with: 'foo bar'
           choose('Clock Out')
-          click_button 'Log Event'
+          expect do
+            click_button 'Log Event'
+          end.to change { Clock.count }.by(1)
           expect(current_path).to eq clock_index_path
         end
       end
