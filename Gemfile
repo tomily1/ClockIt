@@ -58,6 +58,7 @@ group :test do
   gem 'pry'
   gem 'rspec-rails', '~> 3.8'
   gem 'shoulda-matchers'
+  gem 'simplecov', require: false
 end
 
 group :development do
