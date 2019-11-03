@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  columns = ["id", "type", "clocked_at", "details", "delete_record"]
+  columns = ["id", "type", "clocked_at", "details", "edit_record", "delete_record"]
   $('#clock-datatable').dataTable({
     "processing": true,
     "serverSide": true,
@@ -18,9 +18,11 @@ $(document).ready(function() {
     "pagingType": "simple_numbers",
     "columns": formatColumns(columns),
     columnDefs: [
-      { width: '20%', targets: 0 },
+      { width: '10%', targets: 0 },
+      { width: '20%', targets: 1 },
       { width: '25%', targets: 2 },
-      { width: '38%', targets: 3 }
+      { width: '30%', targets: 3 },
+      { width: '10%', targets: 4 }
     ]
   });
 });
@@ -36,12 +38,18 @@ function formatColumns(columns) {
             "Are you sure you want to delete this record?" +
             "' data-method='delete' href='" +
             deletePath +
-            "'><i class='fa fa-trash hi-mama-light-blue'></i></a>"
+            "'><i class='fa fa-trash orange'></i></a>"
           )
         }
       }
+    } else if (columnName === 'edit_record') {
+      return {
+        data: columnName,
+        render: function(editPath) {
+          return "<a href='" + editPath + "'><i class='fa fa-edit hi-mama-light-blue'></i></a>"
+        }
+      }
     }
-
     return { data: columnName }
   });
 };

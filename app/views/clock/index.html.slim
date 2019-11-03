@@ -1,15 +1,18 @@
 h5.text-right
   = link_to("Log out", logout_user_path, method: :post)
 
-h2.text-center Clock History
+h4.hi-mama-light-blue Welcome #{current_user.name}
+.padded
+h2.hi-mama-dark-blue.text-center Clock History
 .padded
 = link_to("Add New Entry", new_clock_path, class: "btn btn-submit")
 .padded
 table#clock-datatable data-source="#{clock_index_path(format: :json)}"
   thead
     tr
-      th ID
+      th 
       th Type
       th Time
       th Details
+      th
       th

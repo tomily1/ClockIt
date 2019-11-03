@@ -3,15 +3,14 @@
 class ClockDatatable < AjaxDatatablesRails::Base
   def view_columns
     @view_columns ||= {
-      id: { source: 'Clock.id', cond: :eq },
       type: { source: 'Clock.type', cond: :like },
       clocked_at: { source: 'Clock.clocked_at', cond: :like },
       details: { source: 'Clock.details', cond: :like }
     }
   end
 
-  def edit_record_path(_clock)
-    Rails.application.routes.url_helpers
+  def edit_record_path(clock)
+    Rails.application.routes.url_helpers.edit_clock_path(clock.id)
   end
 
   def delete_record_path(clock)
@@ -21,10 +20,11 @@ class ClockDatatable < AjaxDatatablesRails::Base
   def data
     records.map do |record|
       {
-        id: record.id,
+        id: '*',
         type: record.type.split('::').join(' '),
         clocked_at: record.clocked_at.strftime('%m/%d/%Y at %I:%M%p'),
         details: record.details,
+        edit_record: edit_record_path(record),
         delete_record: delete_record_path(record)
       }
     end

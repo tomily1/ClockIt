@@ -13,6 +13,6 @@ Rails.application.routes.draw do
     post :logout
   end
 
-  resources :clock, only: %i[index new create destroy] do
+  resources :clock, only: %i[index new create edit update destroy] do
   end
 end

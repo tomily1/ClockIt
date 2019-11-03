@@ -1,0 +1,29 @@
+.row
+  .col-md-3
+  .col-md-6
+    h2.text-center.hi-mama-dark-blue = title
+    .padded
+    .padded
+    .form-group
+      h3.text-center.hi-mama-dark-blue#digital-clock
+      .text-center
+        small.hi-mama-light-blue#time-zone
+    
+    = simple_form_for @clock_event, url: path, method: method do |f|
+      .form-group
+        small
+          span.error-message
+            = render 'shared/flash'
+        = f.input :details, placeholder: 'Record extra information here', class: "form-control", label: false
+      .padded
+      .radio-group
+        = f.label :type, 'Type:', class: 'radio-label'
+        = f.input :type, as: :radio_buttons,
+                  :item_wrapper_class => 'form-check-inline',
+                  collection: [['Clock::In', 'Clock In'], ['Clock::Out', 'Clock Out']],
+                  label_method: :second,
+                  value_method: :first, label: false,
+                  checked: ['Clock::In', 'Clock In'],
+                  required: true
+      .form-group.text-center
+        = f.submit submit, class: "btn-submit"
