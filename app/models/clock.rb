@@ -4,6 +4,7 @@ class Clock < ApplicationRecord
   self.inheritance_column = :_type_disabled
 
   validates :type,
+            presence: true,
             inclusion: {
               in: ['Clock::In', 'Clock::Out'],
               message: '%{value} is not a valid/supported clock type'

@@ -1,4 +1,5 @@
 # ClockIt!
+[![Build Status](https://travis-ci.org/tomily1/ClockIt.svg?branch=master)](https://travis-ci.org/tomily1/ClockIt)
 
 A platform that allows teachers to clock-in/clock-out of their
 daycare center.
@@ -76,4 +77,4 @@ If given a month to work on this:
 
 ### Author
 
-[Tomilayo Israel] (https://github.com/tomily1)
+[Tomilayo Israel](https://github.com/tomily1)
