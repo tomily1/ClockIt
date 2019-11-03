@@ -11,7 +11,7 @@ $(document).ready(function() {
     minute = checkTime(minute);
     second = checkTime(second)
   
-    var time = `${hour}:${minute}:${second}`;
+    var time = hour + ":" + minute + ":" +second;
     $('#digital-clock').html(time);
 
     setTimeout(startTime, 1000)
