@@ -26,7 +26,7 @@ class ClockController < ApplicationController
     @clock_event = current_user.clocks.new(
       type: clock_params[:type],
       details: clock_params[:details],
-      clocked_at: DateTime.parse(clock_params[:clocked_at])
+      clocked_at: clocked_time
     )
 
     if @clock_event.save
@@ -56,6 +56,12 @@ class ClockController < ApplicationController
   end
 
   private
+
+  def clocked_time
+    DateTime.parse(clock_params[:clocked_at])
+  rescue
+    Time.now
+  end
 
   def clock
     Clock.find_by_id(params[:id])

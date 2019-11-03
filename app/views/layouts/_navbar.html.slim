@@ -1,7 +1,7 @@
 nav.navbar.navbar-light.bg-light
   .container
     .logo-wrapper 
-      a.navbar-brand href="#" 
+      = link_to clock_index_path, class: "navbar-brand" do
         = image_tag "himama.webp", style: "width:100%"
     h1.nav-end
       span.hi-mama-light-blue Clock
