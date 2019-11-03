@@ -11,8 +11,6 @@ gem 'ajax-datatables-rails'
 
 gem 'bootstrap', '~> 4.3.1'
 
-gem 'chromedriver-helper'
-
 gem 'font-awesome-sass', '~> 5.11.2'
 
 gem 'jquery-rails'
@@ -57,11 +55,9 @@ gem 'bcrypt', '~> 3.1.7'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry'
-  # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 2.15'
   gem 'factory_bot_rails'
   gem 'rspec-rails', '~> 3.8'
-  gem 'selenium-webdriver'
+  gem 'poltergeist', '1.9.0'
 end
 
 group :development do

@@ -2,17 +2,17 @@
 
 FactoryBot.define do
   factory :clock do
-    details    { "foo bar" }
+    details    { 'foo bar' }
     clocked_at { Time.now }
-    type       { "Clock::In" }
+    type       { 'Clock::In' }
     association :user, factory: :user
   end
 
   trait(:in) do
-    type       { "Clock::In" }
+    type       { 'Clock::In' }
   end
 
   trait(:out) do
-    type       { "Clock::Out" }
+    type       { 'Clock::Out' }
   end
 end
