@@ -4,11 +4,11 @@ Rails.application.routes.draw do
 
   get "register", to: "users#new"
 
-  resource :user, only: %i[create] do
+  resource :user, only: %i(create) do
     post :login
   end
 
-  resources :clock, only: [:index] do
+  resources :clock, only: %i(index destroy) do
     post :in
     post :out
   end
