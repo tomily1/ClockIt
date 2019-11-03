@@ -26,7 +26,7 @@ class ClockController < ApplicationController
     @clock_event = current_user.clocks.new(
       type: clock_params[:type],
       details: clock_params[:details],
-      clocked_at: Time.now.asctime.in_time_zone("Africa/Lagos")
+      clocked_at: Time.now.asctime.in_time_zone('Africa/Lagos')
     )
 
     if @clock_event.save
