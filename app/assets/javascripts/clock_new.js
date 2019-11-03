@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).on('turbolinks:load', function() {
   startTime();
   
   function startTime() {
@@ -11,8 +11,9 @@ $(document).ready(function() {
     minute = checkTime(minute);
     second = checkTime(second)
   
-    var time = `${hour}:${minute}:${second}`;
+    var time = hour + ":" + minute + ":" +second;
     $('#digital-clock').html(time);
+    $('#clock_clocked_at').val(new Date())
 
     setTimeout(startTime, 1000)
   }

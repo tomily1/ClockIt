@@ -31,4 +31,10 @@ RSpec.describe User do
       expect(user.save).to eq false
     end
   end
+
+  context 'relationship and validations' do
+    it { should have_many(:clocks) }
+    it { should validate_presence_of(:name) }
+    it { should validate_presence_of(:email) }
+  end
 end

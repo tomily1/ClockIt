@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).on('turbolinks:load', function() {
   columns = ["id", "type", "clocked_at", "details", "edit_record", "delete_record"]
   $('#clock-datatable').dataTable({
     "processing": true,

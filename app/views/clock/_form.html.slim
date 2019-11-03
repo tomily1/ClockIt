@@ -10,6 +10,7 @@
         small.hi-mama-light-blue#time-zone
     
     = simple_form_for @clock_event, url: path, method: method do |f|
+      = f.hidden_field :clocked_at, input_html: { id: 'clocked_time' }
       .form-group
         small
           span.error-message

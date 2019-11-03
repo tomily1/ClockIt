@@ -26,7 +26,7 @@ class ClockController < ApplicationController
     @clock_event = current_user.clocks.new(
       type: clock_params[:type],
       details: clock_params[:details],
-      clocked_at: Time.now
+      clocked_at: clocked_time
     )
 
     if @clock_event.save
@@ -43,7 +43,7 @@ class ClockController < ApplicationController
 
   def update
     @clock_event = clock
-    if @clock_event.update(clock_params)
+    if @clock_event.update(type: clock_params[:type], details: clock_params[:details])
       redirect_to clock_index_path
     else
       render :edit
@@ -57,11 +57,17 @@ class ClockController < ApplicationController
 
   private
 
+  def clocked_time
+    DateTime.parse(clock_params[:clocked_at])
+  rescue StandardError
+    Time.now
+  end
+
   def clock
     Clock.find_by_id(params[:id])
   end
 
   def clock_params
-    params.require(:clock).permit(:details, :type)
+    params.require(:clock).permit(:details, :type, :clocked_at)
   end
 end
