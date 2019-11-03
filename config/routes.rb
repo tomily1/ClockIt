@@ -6,12 +6,13 @@ Rails.application.routes.draw do
 
   get 'register', to: 'users#new'
 
+  # get 'timer', to: 'clock#time'
+
   resource :user, only: %i[create] do
     post :login
+    post :logout
   end
 
-  resources :clock, only: %i[index destroy] do
-    post :in
-    post :out
+  resources :clock, only: %i[index new create edit update destroy] do
   end
 end

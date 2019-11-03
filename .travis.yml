@@ -6,15 +6,18 @@ rvm:
   - 2.3.4
 matrix:
   fast_finish: true
+before_script:
+  - LATEST_CHROMEDRIVER_VERSION=`curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE"`
+  - curl "https://chromedriver.storage.googleapis.com/${LATEST_CHROMEDRIVER_VERSION}/chromedriver_linux64.zip" -O
+  - unzip chromedriver_linux64.zip -d ~/bin
 script:
+  - bundle exec rubocop -c .rubocop.yml --fail-level C
   - bundle exec rspec
 addons:
   postgresql: '9.5'
 services:
   - postgresql
 before_script:
-  # - cp -v config/database.yml.example config/database.yml
-  # - cp -v config/settings.yml.example config/settings.yml
   - bundle exec rake db:create
   - bundle exec rake db:migrate
 sudo: false
