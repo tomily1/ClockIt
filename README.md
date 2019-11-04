@@ -60,7 +60,7 @@ This application is basic and it shows the basic functionality of a clocking app
 
 If given another day to work on this:
 
-1. I will create the admin backend that will help the admin support and application/daycare owner view all the clock in and outs of each teachers in the daycare (User Management)
+1. I will create the admin backend that will help admin supports and application/daycare owner view all the clock in and outs of each teacher in the daycare (User Management)
 
 2. Write more specs to increase the code coverage as well as eliminate breaking changes that might occur by introducing new features.
 
