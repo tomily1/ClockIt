@@ -21,7 +21,7 @@ gem 'jquery-datatables-rails'
 gem 'rails', '~> 5.1.7'
 
 # Use Puma as the app server
-gem 'puma', '~> 3.12'
+gem 'puma', '~> 4.3'
 
 # Use postgres as the database for Active Record
 gem 'pg'
